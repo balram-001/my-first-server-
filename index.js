@@ -4,12 +4,12 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.json({ message: "Server Live", link: "/localconfig.json pe config hai" });
+  res.json({ status: "online", config_url: "/localconfig.json" });
 });
 
 app.get('/localconfig.json', (req, res) => {
   res.json({
-    "verAddr": "https://my-first-server-da2k.onrender.com/",
+    "verAddr": "https://my-first-server-pjy5.onrender.com/",
     "skipResourceDownload": false,
     "skipVersionCheck": false,
     "checkHacker": false,
