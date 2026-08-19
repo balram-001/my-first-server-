@@ -4,12 +4,24 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.json({ message: "Bhai mera pehla server chal gaya!", status: "online" });
+  res.json({ message: "Server Live", link: "/localconfig.json pe config hai" });
 });
 
-app.get('/config', (req, res) => {
-  res.json({ app_name: "My Learning Panel", version: "1.0" });
+app.get('/localconfig.json', (req, res) => {
+  res.json({
+    "verAddr": "https://my-first-server-da2k.onrender.com/",
+    "skipResourceDownload": false,
+    "skipVersionCheck": false,
+    "checkHacker": false,
+    "forceCrash": false,
+    "enableUGCFullCustom": true,
+    "showAllIngameTutorial": false,
+    "resetGuest": false,
+    "expiresAt": "2026-08-20T23:59:59+05:30",
+    "telegramLink": "https://t.me/Elite_Config",
+    "title": "CONFIG ZONE MODERATOR"
+  });
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("Server running"));
+app.listen(PORT, () => console.log("Running"));
